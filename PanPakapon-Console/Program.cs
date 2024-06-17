@@ -44,8 +44,7 @@ namespace PanPakapon.ConsoleApp
                 }
                 else if(double.TryParse(args[5], out volume)) //both path and volume
                 {
-                    filePath = Path.Combine(Directory.GetCurrentDirectory(), _defaultName);
-                    Console.WriteLine($"Warning: Use {args[5]} as VOLUME, output path is still {_defaultName}");
+                    filePath = Path.Combine(Directory.GetCurrentDirectory(), args[6]);
                 }
                 else
                 {
