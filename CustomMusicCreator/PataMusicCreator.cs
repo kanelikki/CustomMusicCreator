@@ -1,5 +1,6 @@
 ﻿using CustomMusicCreator.Logics;
 using CustomMusicCreator.Utils;
+using System.Globalization;
 
 namespace CustomMusicCreator
 {
@@ -12,12 +13,14 @@ namespace CustomMusicCreator
         private MusicSplitter _splitter;
         private AtracConverter _atracConverter;
         private SgdConverter _sgdConverter;
+        private VolumeAdjuster _volumeAdjuster;
         public PataMusicCreator(ILogger logger)
         {
             _logger = logger;
             _splitter = new MusicSplitter(logger);
             _atracConverter = new AtracConverter(logger);
             _sgdConverter = new SgdConverter(logger);
+            _volumeAdjuster = new VolumeAdjuster();
         }
         /// <summary>
         /// Start converting music.
@@ -61,10 +64,21 @@ namespace CustomMusicCreator
                 {
                     atracList.AddRange(musicUnit.ConvertToAtrac());
                 }
-                _logger.LogMessage($"[ SGD CONVERTER ] Started to convert to Sgd");
+                _logger.LogMessage("[ SGD CONVERTER ] Started to convert to Sgd");
                 var sgdConverted = _sgdConverter.ConvertAll(atracList.ToArray());
-                _logger.LogMessage($"Files are converted to SGD successfully.");
-
+                _logger.LogMessage("Files are converted to SGD successfully.");
+                if (model.VolumeScale != 1)
+                {
+                    if (model.VolumeScale < 0)
+                    {
+                        _logger.LogMessage("Volume value cannot be negative. Skipping...");
+                    }
+                    else
+                    {
+                        _logger.LogMessage($"Adjusting volume to {model.VolumeScale.ToString("P2", CultureInfo.InvariantCulture)}%...");
+                        _volumeAdjuster.SetVolume(sgdConverted, model.VolumeScale);
+                    }
+                }
                 _logger.LogMessage("[ BND RePacker ] Start repacking progress... (logging may not supported)");
 
                 try

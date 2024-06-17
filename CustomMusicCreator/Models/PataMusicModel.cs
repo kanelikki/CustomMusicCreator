@@ -15,6 +15,7 @@ namespace CustomMusicCreator
         public readonly string VoiceTheme;
         public readonly string DestinationPath;
         public readonly string DestinationDirectory;
+        public readonly double VolumeScale;
         /// <summary>
         /// Creates music data for passing to <see cref="PataMusicCreator"/>.
         /// </summary>
@@ -24,8 +25,9 @@ namespace CustomMusicCreator
         /// <param name="level3MusicPath">Fever (intro+loop) music path.</param>
         /// <param name="voiceTheme">Voice theme name.</param>
         /// <param name="destinationPath">The path directory for the result file. Must be writable.</param>
+        /// <param name="volumeScale">The scale of the volume.</param>
         public PataMusicModel(string baseMusicPath, string level1MusicPath, string level2MusicPath, string level3MusicPath,
-            string voiceTheme, string destinationPath)
+            string voiceTheme, string destinationPath, double volumeScale = 1)
         {
             BaseMusicPath = baseMusicPath;
             Level1MusicPath = level1MusicPath;
@@ -34,6 +36,7 @@ namespace CustomMusicCreator
             VoiceTheme = voiceTheme;
             DestinationPath = destinationPath;
             DestinationDirectory = FilePathUtils.GetParentDirectory(destinationPath);
+            VolumeScale = volumeScale;
         }
     }
 }
