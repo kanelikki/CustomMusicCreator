@@ -11,19 +11,7 @@
         <local:FileSelector Label="Level1" Seconds="16" x:Name="Level1Theme"></local:FileSelector>
         <local:FileSelector Label="Level2" Seconds="20" x:Name="Level2Theme"></local:FileSelector>
         <local:FileSelector Label="Level3" Seconds="68" x:Name="Level3Theme"></local:FileSelector>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="120" />
-                <ColumnDefinition/>
-                <ColumnDefinition Width="80" />
-            </Grid.ColumnDefinitions>
-            <Label Grid.Column="0">Volume</Label>
-            <Slider Grid.Column="1" Margin="0 5 20 15" HorizontalAlignment="Stretch" Width="Auto" Value="1" Maximum="3" LargeChange="0.5" />
-            <TextBlock Grid.Column="2" Foreground="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Name="VolumeTextBlock"
-                       Margin="0 5 30 0" TextAlignment="Right" FontSize="14" FontWeight="Bold">
-                <Run Name="VolumeText" Text="100%" />
-            </TextBlock>
-        </Grid>
+        <local:VolumeChanger x:Name="VolumeHandle"></local:VolumeChanger>
         <local:VoiceSelector x:Name="Voices"></local:VoiceSelector>
         <local:SavePathSelector x:Name="SavePathGetter"></local:SavePathSelector>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0">

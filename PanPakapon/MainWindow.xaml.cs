@@ -44,7 +44,7 @@ namespace PanPakapon
                 convertWindow.Convert(
                     new CustomMusicCreator.PataMusicModel(
                         BaseTheme.FileName, Level1Theme.FileName, Level2Theme.FileName, Level3Theme.FileName,
-                        Voices.VoiceName, SavePathGetter.ResultPath)
+                        Voices.VoiceName, SavePathGetter.ResultPath, VolumeHandle.Volume)
                     );
             }
         }
