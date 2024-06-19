@@ -62,7 +62,8 @@ namespace PanPakapon.ConsoleApp
                 "\nRemember to put voice name with number!\n"+
                 "Adding Custom Voice:\n" +
                 "Make *new folder* in \"resources/files/voices\", and put \"ptp_btl_bgm_voice.dat\" there. Then open the Pan Pakapon app - you'll see the custom music from the list.\n" +
-                "For more info about Custom chants, check this guide (by Axus): https://docs.google.com/document/d/1rvkxxJ8OcqYgyw_RP4jU3eVAE-uf8FBdI-C-Yibi-Ac/edit");
+                "For more info about Custom chants, check this guide (by Axus): https://docs.google.com/document/d/1rvkxxJ8OcqYgyw_RP4jU3eVAE-uf8FBdI-C-Yibi-Ac/edit\n" +
+                "or try this (please read README.MD carefully!) : https://github.com/rnielikki/VagSoundReplacer");
         }
     }
 }
