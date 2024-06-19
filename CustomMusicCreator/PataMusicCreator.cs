@@ -75,7 +75,7 @@ namespace CustomMusicCreator
                     }
                     else
                     {
-                        _logger.LogMessage($"Adjusting volume to {model.VolumeScale.ToString("P2", CultureInfo.InvariantCulture)}%...");
+                        _logger.LogMessage($"Adjusting volume to {model.VolumeScale.ToString("P2", CultureInfo.InvariantCulture)}...");
                         _volumeAdjuster.SetVolume(sgdConverted, model.VolumeScale);
                     }
                 }
