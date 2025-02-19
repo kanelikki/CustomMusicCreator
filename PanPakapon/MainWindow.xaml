@@ -23,7 +23,7 @@
                 <ColumnDefinition Width="0"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <TextBlock Padding="15 5 5 5">
-                <Hyperlink NavigateUri="https://rnielikki.github.io/ear-trial/" RequestNavigate="LinkClick">
+                <Hyperlink NavigateUri="https://kanelikki.github.io/ear-trial/" RequestNavigate="LinkClick">
                     <Hyperlink.Style>
                         <Style TargetType="Hyperlink">
                             <Setter Property="Foreground" Value="#afa0ff"></Setter>
