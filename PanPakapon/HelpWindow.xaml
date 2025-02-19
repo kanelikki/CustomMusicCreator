@@ -62,7 +62,22 @@
                         </Hyperlink.Style>
                         <Run FontWeight="Bold" Text="this guide"/>
                     </Hyperlink>
-                    <Run Text=" (by Axus)"/>
+                    <Run Text=" (by Axus) or"/>
+                    <Hyperlink NavigateUri="https://github.com/rnielikki/VagSoundReplacer" RequestNavigate="LinkClick">
+                        <Hyperlink.Style>
+                            <Style TargetType="Hyperlink">
+                                <Setter Property="Foreground" Value="#afa0ff"></Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Foreground" Value="AliceBlue"></Setter>
+                                        <Setter Property="Background" Value="BlueViolet"></Setter>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Hyperlink.Style>
+                        <Run FontWeight="Bold" Text="this program"/>
+                    </Hyperlink>
+                    <Run Text=" (PLEASE read README.MD carefully!)"/>
                 </TextBlock>
             </StackPanel>
         </ScrollViewer>

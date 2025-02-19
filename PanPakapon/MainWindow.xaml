@@ -11,6 +11,7 @@
         <local:FileSelector Label="Level1" Seconds="16" x:Name="Level1Theme"></local:FileSelector>
         <local:FileSelector Label="Level2" Seconds="20" x:Name="Level2Theme"></local:FileSelector>
         <local:FileSelector Label="Level3" Seconds="68" x:Name="Level3Theme"></local:FileSelector>
+        <local:VolumeChanger x:Name="VolumeHandle"></local:VolumeChanger>
         <local:VoiceSelector x:Name="Voices"></local:VoiceSelector>
         <local:SavePathSelector x:Name="SavePathGetter"></local:SavePathSelector>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0">
